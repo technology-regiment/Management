@@ -1,0 +1,17 @@
+D:\project\Management\Management.ILogic\bin\Debug\Management.ILogic.dll
+D:\project\Management\Management.ILogic\bin\Debug\Management.ILogic.pdb
+D:\project\Management\Management.ILogic\bin\Debug\Management.Data.dll
+D:\project\Management\Management.ILogic\bin\Debug\Castle.Windsor.dll
+D:\project\Management\Management.ILogic\bin\Debug\EntityFramework.dll
+D:\project\Management\Management.ILogic\bin\Debug\Castle.Core.dll
+D:\project\Management\Management.ILogic\bin\Debug\Management.Data.pdb
+D:\project\Management\Management.ILogic\bin\Debug\Management.Data.dll.config
+D:\project\Management\Management.ILogic\bin\Debug\Castle.Windsor.xml
+D:\project\Management\Management.ILogic\bin\Debug\EntityFramework.xml
+D:\project\Management\Management.ILogic\bin\Debug\Castle.Core.xml
+D:\project\Management\Management.ILogic\obj\Debug\Management.ILogic.csprojAssemblyReference.cache
+D:\project\Management\Management.ILogic\obj\Debug\Management.ILogic.csproj.CoreCompileInputs.cache
+D:\project\Management\Management.ILogic\obj\Debug\Management.ILogic.csproj.CopyComplete
+D:\project\Management\Management.ILogic\obj\Debug\Management.ILogic.dll
+D:\project\Management\Management.ILogic\obj\Debug\Management.ILogic.pdb
+D:\project\Management\Management.ILogic\bin\Debug\Management.ILogic.dll.config

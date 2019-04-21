@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Management.API",
+    "\\Management.API\\App_Start",
+    "\\ZEMIC.ScrumBoard.API",
+    "\\ZEMIC.ScrumBoard.API\\Areas\\HelpPage",
+    "\\ZEMIC.ScrumBoard.API\\Controllers"
+  ],
+  "SelectedNode": "\\Management.API\\Areas",
+  "PreviewInSolutionExplorer": false
+}
