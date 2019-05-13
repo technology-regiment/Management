@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Web.Http.Filters;
 
-namespace Management.WebAPI
+namespace Management.API
 {
     public class ManagementExceptionFilterAttribute : ExceptionFilterAttribute
     {

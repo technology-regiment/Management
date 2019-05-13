@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-    <id>ZEMIC.ScrumBoard.API</id>
-    <version>$version$</version>
-    <authors>ZEMIC.ScrumBoard</authors>
-    <description>ZEMIC.ScrumBoard.API</description>
-  </metadata>
-</package>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web.Http.Dependencies;
 using Castle.Windsor;
 
-namespace Management.WebAPI.Installer
+namespace Management.API.Installer
 {
     public class WindsorDependencyResolver : IDependencyResolver
     {

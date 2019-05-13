@@ -4,7 +4,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using Castle.Windsor;
 
-namespace Management.WebAPI.Installer
+namespace Management.API.Installer
 {
     public class WindsorCompositionRoot : IHttpControllerActivator
     {

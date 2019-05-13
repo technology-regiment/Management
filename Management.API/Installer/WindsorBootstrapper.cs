@@ -4,7 +4,7 @@ using Castle.MicroKernel.Registration;
 using Management.Logic.Installer;
 using Management.Repository.Installer;
 
-namespace Management.WebAPI.Installer
+namespace Management.API.Installer
 {
     public static class WindsorBootstrapper
     {

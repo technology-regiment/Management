@@ -5,7 +5,7 @@ using System.Web.Http.Dependencies;
 using Castle.MicroKernel.Lifestyle;
 using Castle.Windsor;
 
-namespace Management.WebAPI.Installer
+namespace Management.API.Installer
 {
     public class WindsorDependencyScope : IDependencyScope
     {
