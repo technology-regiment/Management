@@ -4,6 +4,9 @@ import { routerRedux } from 'dva/router';
 import styles from './Users.css';
 import UserModal from './UserModal';
 
+
+
+
 function Users({ dispatch, loading, data,user }) {
   function deleteHandler(Id) {
     dispatch({
@@ -39,6 +42,12 @@ function editGetUserHandler(Id){
     });
   }
 
+  function queryByPage(values){
+    dispatch({
+
+    });
+  }
+
   const columns = [
     {
       title: '用户姓名',
@@ -64,6 +73,7 @@ function editGetUserHandler(Id){
   return (
     <div className={styles.normal}>
       <div>
+       
         <div className={styles.create}>
           <UserModal record={{}} onOk={createHandler}>
             <Button type="primary">新增用户</Button>
