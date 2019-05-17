@@ -11,7 +11,7 @@ class UserEditModal extends Component {
     };
   }
 
-  showModelHandler = (e) => {
+  showModelHandler = e => {
     if (e) e.stopPropagation();
     this.setState({
       visible: true,
@@ -37,7 +37,7 @@ class UserEditModal extends Component {
   render() {
     const { children } = this.props;
     const { getFieldDecorator } = this.props.form;
-    const { name, email, website } = this.props.record;
+    const { name } = this.props.record;
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
@@ -45,27 +45,20 @@ class UserEditModal extends Component {
 
     return (
       <span>
-        <span onClick={this.showModelHandler}>
-          { children }
-        </span>
+        <span onClick={this.showModelHandler}>{children}</span>
         <Modal
-          title="Edit User"
+          title="新增/修改用户"
           visible={this.state.visible}
           onOk={this.okHandler}
           onCancel={this.hideModelHandler}
         >
           <Form horizontal onSubmit={this.okHandler}>
-            <FormItem
-              {...formItemLayout}
-              label="Name"
-            >
-              {
-                getFieldDecorator('name', {
-                  initialValue: name,
-                })(<Input />)
-              }
+            <FormItem {...formItemLayout} label="姓名">
+              {getFieldDecorator('Name', {
+                initialValue: name,
+              })(<Input />)}
             </FormItem>
-            <FormItem
+            {/* <FormItem
               {...formItemLayout}
               label="Email"
             >
@@ -74,8 +67,8 @@ class UserEditModal extends Component {
                   initialValue: email,
                 })(<Input />)
               }
-            </FormItem>
-            <FormItem
+            </FormItem> */}
+            {/* <FormItem
               {...formItemLayout}
               label="Website"
             >
@@ -84,7 +77,7 @@ class UserEditModal extends Component {
                   initialValue: website,
                 })(<Input />)
               }
-            </FormItem>
+            </FormItem> */}
           </Form>
         </Modal>
       </span>

@@ -3,28 +3,26 @@ import { connect } from 'dva';
 import Users from './components/Users';
 
 class Userdashboard extends Component {
-
   state = {
-		filter: {},
-		pagination: {
-			orderProperty: 'Name',
-			ascending: false,
-			pageNumber: 1,
-			pageSize: 10
-		}
+    filter: {},
+    pagination: {
+      orderProperty: 'Name',
+      ascending: false,
+      pageNumber: 1,
+      pageSize: 10,
+    },
   };
-  
-  getByPage=()=>{
-    const{filter,pagination} =this.state;
+
+  getByPage = () => {
+    const { filter, pagination } = this.state;
     this.props.dispatch({
       type: 'user-dashboard/fetch',
       payload: {
         filter,
-        ...pagination
+        ...pagination,
       },
     });
-
-  }
+  };
   componentDidMount() {
     this.getByPage();
   }

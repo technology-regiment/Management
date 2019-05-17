@@ -3,42 +3,54 @@ import * as usersService from './service';
 export default {
   namespace: 'user-dashboard',
   state: {
-   data:{
-     Result:[],
-     Pagination:{}
-   }
+    data: {
+      Results: [],
+      Pagination: {},
+    },
+
+    filter: {},
+    pagination: {
+      orderProperty: 'Name',
+      ascending: false,
+      pageNumber: 1,
+      pageSize: 10,
+    },
   },
   reducers: {
-    save(state,action) {
+    save(state, action) {
       return {
-      ...state,
-      data: action.payload
-     };
+        ...state,
+        data: action.payload,
+      };
     },
   },
   effects: {
-    *fetch( {payload}, { call, put }) {
+    *fetch({ payload }, { call, put }) {
       const response = yield call(usersService.fetch, payload);
       yield put({
         type: 'save',
         payload: response,
-        
       });
     },
 
-    *remove({ payload: id }, { call, put, select }) {
-      yield call(usersService.remove, id);
-      const page = yield select(state => state['user-dashboard'].page);
-      yield put({ type: 'fetch', payload: { page } });
-    },
-    *patch({ payload: { id, values } }, { call, put, select }) {
-      yield call(usersService.patch, id, values);
-      const page = yield select(state => state['user-dashboard'].page);
-      yield put({ type: 'fetch', payload: { page } });
-    },
     *create({ payload: values }, { call, put, select }) {
       yield call(usersService.create, values);
-      const page = yield select(state => state['user-dashboard'].page);
+      const filter = yield select(state => state['user-dashboard'].filter);
+      const pagination = yield select(state => state['user-dashboard'].pagination);
+      yield put({ type: 'fetch', payload: { filter, ...pagination } });
+    },
+
+    *patch({ payload: editValues }, { call, put, select }) {
+      yield call(usersService.edit, editValues);
+      const filter = yield select(state => state['user-dashboard'].filter);
+      const pagination = yield select(state => state['user-dashboard'].pagination);
+      yield put({ type: 'fetch', payload: { page } });
+    },
+
+    *remove({ payload: Id }, { call, put, select }) {
+      yield call(usersService.remove, Id);
+      const filter = yield select(state => state['user-dashboard'].filter);
+      const pagination = yield select(state => state['user-dashboard'].pagination);
       yield put({ type: 'fetch', payload: { page } });
     },
   },

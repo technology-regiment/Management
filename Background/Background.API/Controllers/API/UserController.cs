@@ -15,7 +15,7 @@ namespace Background.API.Controllers.API
             _userLogic = userLogic;
         }
 
-       
+
 
         [Route("api/users")]
         [HttpPost]
@@ -26,16 +26,18 @@ namespace Background.API.Controllers.API
 
         }
 
+
+
         [Route("api/users")]
         [HttpPut]
-        public void Put([FromBody]UpdateUserUICommand command)
+        public void Put(UpdateUserUICommand command)
         {
             _userLogic.Update(command);
         }
 
         [Route("api/users/pagination")]
         [HttpPost]
-        public PagedCollection<UserDataGridViewModel> Pagination([FromBody]UserPageAndSortingUICommand pageAndSorting)
+        public PagedCollection<UserDataGridViewModel> Pagination(UserPageAndSortingUICommand pageAndSorting)
         {
             return _userLogic.GetAllByPageAndSorting(pageAndSorting);
         }
@@ -44,7 +46,7 @@ namespace Background.API.Controllers.API
         [HttpDelete]
         public void Delete(int id)
         {
-                _userLogic.Delete(id);
+                //_userLogic.Delete(id);
 
         }
     }

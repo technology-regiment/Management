@@ -5,15 +5,11 @@ import styles from './Users.css';
 import { PAGE_SIZE } from '../utils/constants';
 import UserModal from './UserModal';
 
-function Users({ dispatch, loading ,data}) {
-
- 
-
-
-  function deleteHandler(id) {
+function Users({ dispatch, loading, data }) {
+  function deleteHandler(Id) {
     dispatch({
       type: 'user-dashboard/remove',
-      payload: id,
+      payload: Id,
     });
   }
 
@@ -24,10 +20,11 @@ function Users({ dispatch, loading ,data}) {
     });
   }
 
-  function editHandler(id, values) {
+  function editHandler(Id, values) {
+    const editValues = { Id, ...values };
     dispatch({
       type: 'user-dashboard/patch',
-      payload: { id, values },
+      payload: editValues,
     });
   }
 
@@ -41,17 +38,18 @@ function Users({ dispatch, loading ,data}) {
   const columns = [
     {
       title: '用户姓名',
-			dataIndex: 'Name',
+      dataIndex: 'Name',
+      key: 'name',
     },
     {
       title: 'Operation',
       key: 'operation',
       render: (text, record) => (
         <span className={styles.operation}>
-          <UserModal record={record} onOk={editHandler.bind(null, record.id)}>
-            <a>Edit</a>
+          <UserModal record={record} onOk={editHandler.bind(null, record.Id)}>
+            <a>修改</a>
           </UserModal>
-          <Popconfirm title="Confirm to delete?" onConfirm={deleteHandler.bind(null, record.id)}>
+          <Popconfirm title="Confirm to delete?" onConfirm={deleteHandler.bind(null, record.Id)}>
             <a href="">Delete</a>
           </Popconfirm>
         </span>
@@ -64,14 +62,14 @@ function Users({ dispatch, loading ,data}) {
       <div>
         <div className={styles.create}>
           <UserModal record={{}} onOk={createHandler}>
-            <Button type="primary">Create User</Button>
+            <Button type="primary">新增用户</Button>
           </UserModal>
         </div>
         <Table
           loading={loading}
           columns={columns}
           dataSource={data.Results}
-          rowKey={record => record.id}
+          rowKey="Id"
           pagination={false}
         />
         <Pagination
@@ -87,7 +85,7 @@ function Users({ dispatch, loading ,data}) {
 }
 
 function mapStateToProps(state) {
-  const {   page ,data} = state['user-dashboard'];
+  const { page, data } = state['user-dashboard'];
   return {
     data,
     loading: state.loading.models['user-dashboard'],
