@@ -37,7 +37,7 @@ class UserEditModal extends Component {
   render() {
     const { children } = this.props;
     const { getFieldDecorator } = this.props.form;
-    const { name } = this.props.record;
+    const { Name } = this.props.record;
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
@@ -55,7 +55,7 @@ class UserEditModal extends Component {
           <Form horizontal onSubmit={this.okHandler}>
             <FormItem {...formItemLayout} label="姓名">
               {getFieldDecorator('Name', {
-                initialValue: name,
+                initialValue: Name,
               })(<Input />)}
             </FormItem>
             {/* <FormItem

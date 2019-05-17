@@ -60,7 +60,7 @@ export default {
           component: './Welcome',
         },
         {
-          name: '系统用户',
+          name: 'systemUser',
           icon: 'smile',
           path: '/user-dashboard',
           component: './user-dashboard',

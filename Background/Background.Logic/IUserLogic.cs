@@ -1,8 +1,6 @@
-
-using System.Collections.Generic;
+using Background.Entities;
 using Background.Logic.UICommands;
 using Background.Logic.ViewModel;
-using Background.Logic.ViewModels;
 
 
 namespace Background.Logic
@@ -14,5 +12,6 @@ namespace Background.Logic
         void Update(UpdateUserUICommand command);
         void Delete(int id);
         PagedCollection<UserDataGridViewModel> GetAllByPageAndSorting(UserPageAndSortingUICommand pageAndSorting);
+        User GetById(int id);
     }
 }

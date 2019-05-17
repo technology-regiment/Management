@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using Background.Entities;
 using Background.Logic;
 using Background.Logic.UICommands;
 using Background.Logic.ViewModel;
@@ -35,6 +36,21 @@ namespace Background.API.Controllers.API
             _userLogic.Update(command);
         }
 
+        [Route("api/users/{id}")]
+        [HttpDelete]
+        public void Delete(int id)
+        {
+            _userLogic.Delete(id);
+
+        }
+
+        [Route("api/users/{id}")]
+        [HttpGet]
+        public User GetById(int id)
+        {
+            return  _userLogic.GetById(id);
+        }
+
         [Route("api/users/pagination")]
         [HttpPost]
         public PagedCollection<UserDataGridViewModel> Pagination(UserPageAndSortingUICommand pageAndSorting)
@@ -42,12 +58,6 @@ namespace Background.API.Controllers.API
             return _userLogic.GetAllByPageAndSorting(pageAndSorting);
         }
 
-        [Route("api/users/{id}")]
-        [HttpDelete]
-        public void Delete(int id)
-        {
-                //_userLogic.Delete(id);
-
-        }
+       
     }
 }

@@ -2,10 +2,9 @@ import { connect } from 'dva';
 import { Table, Pagination, Popconfirm, Button } from 'antd';
 import { routerRedux } from 'dva/router';
 import styles from './Users.css';
-import { PAGE_SIZE } from '../utils/constants';
 import UserModal from './UserModal';
 
-function Users({ dispatch, loading, data }) {
+function Users({ dispatch, loading, data,user }) {
   function deleteHandler(Id) {
     dispatch({
       type: 'user-dashboard/remove',
@@ -19,7 +18,12 @@ function Users({ dispatch, loading, data }) {
       payload: { page },
     });
   }
-
+function editGetUserHandler(Id){
+  dispatch({
+    type: 'user-dashboard/getById',
+    payload: Id,
+  });
+}
   function editHandler(Id, values) {
     const editValues = { Id, ...values };
     dispatch({
@@ -47,10 +51,10 @@ function Users({ dispatch, loading, data }) {
       render: (text, record) => (
         <span className={styles.operation}>
           <UserModal record={record} onOk={editHandler.bind(null, record.Id)}>
-            <a>修改</a>
+          <Button type="primary" onClick={editGetUserHandler.bind(null,record.Id)}>修改</Button>
           </UserModal>
-          <Popconfirm title="Confirm to delete?" onConfirm={deleteHandler.bind(null, record.Id)}>
-            <a href="">Delete</a>
+          <Popconfirm title="确定删除?" onConfirm={deleteHandler.bind(null, record.Id)}>
+          <Button type="danger">删除</Button>
           </Popconfirm>
         </span>
       ),
@@ -85,7 +89,7 @@ function Users({ dispatch, loading, data }) {
 }
 
 function mapStateToProps(state) {
-  const { page, data } = state['user-dashboard'];
+  const { page, data ,user} = state['user-dashboard'];
   return {
     data,
     loading: state.loading.models['user-dashboard'],

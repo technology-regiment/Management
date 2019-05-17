@@ -68,5 +68,10 @@ namespace Background.Logic.Impl
 
             return new PagedCollection<UserDataGridViewModel>(pageAndSorting.PageNumber, totalRecordes, 10, users);
         }
+
+        public User GetById(int id)
+        {
+            return _userRepository.Get(id);
+        }
     }
 }

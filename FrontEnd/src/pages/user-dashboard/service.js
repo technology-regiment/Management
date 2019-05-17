@@ -8,6 +8,10 @@ export function create(values) {
   return request.post('/api/users', { data: values });
 }
 
+export function getById(Id){
+  return request.get("/api/users/" + Id)
+}
+
 export function edit(editValues) {
   return request.put('/api/users', { data: editValues });
 }

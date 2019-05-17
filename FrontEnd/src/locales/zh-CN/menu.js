@@ -1,6 +1,6 @@
 export default {
   'menu.welcome': '欢迎',
-  'menu.bug': '测试页面',
+  'menu.systemUser':'系统用户',
   'menu.more-blocks': '更多区块',
 
   'menu.account.center': '个人中心',

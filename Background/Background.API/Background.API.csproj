@@ -275,6 +275,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Background.Entities\Background.Entities.csproj">
+      <Project>{C8C58B62-82B7-488F-9E43-303BA2DA2BB9}</Project>
+      <Name>Background.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Background.Logic\Background.Logic.csproj">
       <Project>{6C259892-9F4F-43AE-B7DB-B4876DE006ED}</Project>
       <Name>Background.Logic</Name>
