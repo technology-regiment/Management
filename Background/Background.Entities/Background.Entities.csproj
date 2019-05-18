@@ -47,8 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity.cs" />
+    <Compile Include="Enum\FunctionType.cs" />
+    <Compile Include="SystemSetting\SystemFunction.cs" />
+    <Compile Include="SystemSetting\SystemRole.cs" />
+    <Compile Include="SystemSetting\SystemUser.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

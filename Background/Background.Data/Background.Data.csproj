@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackgroundDbContext.cs" />
+    <Compile Include="Mappings\SystemFuntionMap.cs" />
+    <Compile Include="Mappings\SystemRoleMap.cs" />
+    <Compile Include="Mappings\SystemUserMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Migrations\201905100732183_20190510.cs" />
     <Compile Include="Migrations\201905100732183_20190510.Designer.cs">
