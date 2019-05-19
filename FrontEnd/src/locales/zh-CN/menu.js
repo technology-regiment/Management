@@ -1,6 +1,7 @@
 export default {
   'menu.welcome': '欢迎',
-  'menu.systemUser':'系统用户',
+  'menu.systemSetting':'系统设置',
+  'menu.systemSetting.systemUser':'系统用户',
   'menu.more-blocks': '更多区块',
 
   'menu.account.center': '个人中心',

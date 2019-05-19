@@ -60,10 +60,17 @@ export default {
           component: './Welcome',
         },
         {
-          name: 'systemUser',
-          icon: 'smile',
+          name: 'systemSetting',
+          icon: 'setting',
           path: '/user-dashboard',
-          component: './user-dashboard',
+          routes:[
+            {
+              path:'/user-dashboard/index',
+              name:'systemUser',
+              component:'./user-dashboard/index',
+            }
+          ],
+          // component: './user-dashboard',
         },
       ],
     },
