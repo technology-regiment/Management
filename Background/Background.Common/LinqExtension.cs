@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Background.Common
 {
+    /// <summary>
+    /// 分页查询
+    /// </summary>
     public  static class LinqExtension
     {
         public static IQueryable<T> SortByProperty<T>(this IQueryable<T> source, string propertyName, bool asc)

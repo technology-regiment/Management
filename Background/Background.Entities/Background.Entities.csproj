@@ -46,14 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity.cs" />
     <Compile Include="Enum\FunctionType.cs" />
+    <Compile Include="Enum\UserStatus.cs" />
     <Compile Include="SystemSetting\SystemFunction.cs" />
     <Compile Include="SystemSetting\SystemRole.cs" />
     <Compile Include="SystemSetting\SystemUser.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Background.Common\Background.Common.csproj">
+      <Project>{88DC77AA-0078-43B3-A2FE-7174EEC5D6C5}</Project>
+      <Name>Background.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

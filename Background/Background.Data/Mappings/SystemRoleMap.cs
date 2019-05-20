@@ -21,7 +21,7 @@ namespace Background.Data.Mappings
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
-            this.Property(t => t.LastModifyTime).HasColumnName("LastModifyTime");
+            this.Property(t => t.LastModifiedTime).HasColumnName("LastModifyTime");
 
             // Relationships
             this.HasMany(x => x.SystemFunctions).WithMany(x => x.SystemRoles).

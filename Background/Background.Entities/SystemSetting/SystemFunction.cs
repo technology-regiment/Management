@@ -1,4 +1,5 @@
-﻿using Background.Entities.Enum;
+﻿using Background.Common;
+using Background.Entities.Enum;
 using System.Collections.Generic;
 
 namespace Background.Entities.SystemSetting

@@ -58,9 +58,9 @@
     <Compile Include="Mappings\SystemRoleMap.cs" />
     <Compile Include="Mappings\SystemUserMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
-    <Compile Include="Migrations\201905100732183_20190510.cs" />
-    <Compile Include="Migrations\201905100732183_20190510.Designer.cs">
-      <DependentUpon>201905100732183_20190510.cs</DependentUpon>
+    <Compile Include="Migrations\201905201251062_20190520.cs" />
+    <Compile Include="Migrations\201905201251062_20190520.Designer.cs">
+      <DependentUpon>201905201251062_20190520.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -73,14 +73,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Background.Common\Background.Common.csproj">
+      <Project>{88DC77AA-0078-43B3-A2FE-7174EEC5D6C5}</Project>
+      <Name>Background.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Background.Entities\Background.Entities.csproj">
       <Project>{c8c58b62-82b7-488f-9e43-303ba2da2bb9}</Project>
       <Name>Background.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905100732183_20190510.resx">
-      <DependentUpon>201905100732183_20190510.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905201251062_20190520.resx">
+      <DependentUpon>201905201251062_20190520.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

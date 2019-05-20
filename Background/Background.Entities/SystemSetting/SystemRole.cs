@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Background.Common;
+using System;
 using System.Collections.Generic;
 
 namespace Background.Entities.SystemSetting
@@ -8,31 +9,63 @@ namespace Background.Entities.SystemSetting
         /// <summary>
         /// 角色名称
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
         /// <summary>
         /// 描述
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get; private set; }
+
+       
+        /// <summary>
+        /// 创建日期
+        /// </summary>
+        public DateTime CreateTime { get; private set; }
+        /// <summary>
+        /// 最后一次修改日期
+        /// </summary>
+        public DateTime? LastModifiedTime { get; private set; }
+        /// <summary>
+        /// 创建者Id
+        /// </summary>
+        public Guid CreatorId { get; private set; }
 
         /// <summary>
-        /// 创建时间
+        /// 最后一次修改者Id
         /// </summary>
-        public DateTime CreateTime { get; set; }
-
+        public Guid? LastModifiedUserId { get; private set; }
         /// <summary>
-        /// 最后修改时间
+        /// 是否删除
         /// </summary>
-        public DateTime? LastModifyTime { get; set; }
+        public bool IsDeleted { get; private set; }
 
         /// <summary>
         /// 系统用户
         /// </summary>
-        public virtual ICollection<SystemUser> SystemUsers { get; set; }
+        public virtual ICollection<SystemUser> SystemUsers { get; private set; }
 
         /// <summary>
         /// 系统功能
         /// </summary>
-        public virtual ICollection<SystemFunction> SystemFunctions { get; set; }
+        public virtual ICollection<SystemFunction> SystemFunctions { get; private set; }
+        public SystemRole()
+        {
+            SystemUsers = new List<SystemUser>();
+        }
+
+        public static SystemRole Create(string name, string description, Guid creatorId, DateTime createTime)
+        {
+            
+            return new SystemRole
+            {
+                Name = name,
+                Description = description,
+                CreatorId = creatorId,
+                CreateTime = createTime,
+                IsDeleted = false
+            };
+        }
     }
+
+
 }
