@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Background.Common.Installer;
 using Background.Logic.Installer;
 using Background.Repository.Installer;
 using Castle.MicroKernel.Registration;
@@ -19,7 +16,8 @@ namespace Background.API.Installer
                 _container = new WindsorContainer();
                 _container.Install(FromAssembly.This(),
                     FromAssembly.Containing<LogicInstaller>(),
-                    FromAssembly.Containing<RepositoryInstaller>());
+                    FromAssembly.Containing<RepositoryInstaller>(),
+                    FromAssembly.Containing<CommonInstaller>());
 
                 _container.Register(Component.For<IWindsorContainer>().Instance(_container).LifestyleSingleton());
 

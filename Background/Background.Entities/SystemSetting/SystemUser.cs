@@ -74,5 +74,12 @@ namespace Background.Entities.SystemSetting
             };
         }
 
+        public void UpdateLogin(string token, DateTime loginTime)
+        {
+            AuthenticationToken = token;
+            AuthenticationTokenValidTo = loginTime.AddDays(AuthTokenValidDays);
+            LastLoginDate = loginTime;
+        }
+
     }
 }

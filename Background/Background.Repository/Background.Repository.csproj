@@ -61,8 +61,10 @@
     <Compile Include="EntityFrameworkUnitOfWork.cs" />
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="IDbContextProvider.cs" />
+    <Compile Include="Impl\SystemUserRepository.cs" />
     <Compile Include="Impl\UserRepository.cs" />
     <Compile Include="Installer\RepositoryInstaller.cs" />
+    <Compile Include="ISystemUserRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />

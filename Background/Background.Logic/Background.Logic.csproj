@@ -65,8 +65,10 @@
     <Compile Include="UICommands\CreateUserUICommand.cs" />
     <Compile Include="UICommands\FilterUserUICommand.cs" />
     <Compile Include="UICommands\LoginUICommand.cs" />
+    <Compile Include="UICommands\LogoutUICommand.cs" />
     <Compile Include="UICommands\UpdateUserUICommand.cs" />
     <Compile Include="UICommands\UserPageAndSortingUICommand.cs" />
+    <Compile Include="UICommands\VerificationTokenUICommand.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModel\AuthenticatedViewModel.cs" />
     <Compile Include="ViewModel\PagedCollection.cs" />
