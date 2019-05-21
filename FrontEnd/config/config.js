@@ -35,10 +35,11 @@ export default {
    */
   routes: [
     {
-      path: '/user',
+      path: '/user-login',
       component: '../layouts/UserLayout',
       routes: [
-        { path: '/user', redirect: '/user/login' },
+        {path:'/' ,redirect:'/user-login'},
+        { path: '/user-login', name: 'login', component: './user-login/index' },
       ],
     },
     {
@@ -47,7 +48,7 @@ export default {
       routes: [
         {
           path: '/',
-          redirect: '/welcome',
+          //  redirect: '/welcome',
         },
         // dashboard
         {
@@ -60,19 +61,20 @@ export default {
           name: 'systemSetting',
           icon: 'setting',
           path: '/user-dashboard',
-          routes:[
+          routes: [
             {
-              path:'/user-dashboard/index',
-              name:'systemUser',
-              component:'./user-dashboard/index',
-            }
+              path: '/user-dashboard/index',
+              name: 'systemUser',
+              component: './user-dashboard/index',
+            },
           ],
-          // component: './user-dashboard',
         },
+       
       ],
     },
   ],
-  disableRedirectHoist: true,
+  // component: './user-dashboard',
+  disableRedirectHoist: false,
   /**
    * webpack 相关配置
    */
