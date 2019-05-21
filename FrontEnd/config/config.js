@@ -38,7 +38,7 @@ export default {
       path: '/user-login',
       component: '../layouts/UserLayout',
       routes: [
-        {path:'/' ,redirect:'/user-login'},
+        // {path:'/' ,redirect:'/user-login'},
         { path: '/user-login', name: 'login', component: './user-login/index' },
       ],
     },
@@ -48,7 +48,7 @@ export default {
       routes: [
         {
           path: '/',
-          //  redirect: '/welcome',
+           redirect: '/welcome',
         },
         // dashboard
         {

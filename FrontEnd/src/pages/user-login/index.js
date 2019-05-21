@@ -77,27 +77,28 @@ class LoginPage extends Component {
             this.loginForm = form;
           }}
         >
-          <Tab key="account" tab={formatMessage({ id: 'user-login.login.tab-login-credentials' })}>
+          <Tab key="account" tab={formatMessage({ id: 'login.tab-login-credentials' })}>
             {status === 'error' &&
               !submitting &&
-              this.renderMessage(formatMessage({ id: 'user-login.login.message-invalid-credentials' }))}
+              this.renderMessage(formatMessage({ id: 'login.message-invalid-credentials' }))}
             <UserName
-              name="Email"
-              placeholder={'Email'}
+              name="email"
+              placeholder={`${formatMessage({ id: 'Email' })}: 请输入用户名`}
               rules={[
                 {
                   required: true,
-                  message: '请输入邮箱',
+                  message: formatMessage({ id: 'validation.Email.required' }),
                 },
               ]}
             />
+
             <Password
-              name="Password"
-              placeholder={'Password'}
+              name="password"
+              placeholder={`${formatMessage({ id: 'Password' })}: 请输入密码`}
               rules={[
                 {
                   required: true,
-                  message: '请输入密码',
+                  message: formatMessage({ id: 'validation.Password.required' }),
                 },
               ]}
               onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
