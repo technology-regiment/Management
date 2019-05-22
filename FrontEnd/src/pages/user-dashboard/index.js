@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { connect } from 'dva';
 import {  Input,Col,Row ,Layout} from 'antd';
 import Users from './components/Users';
+import PageHeaderWrapper from '@/components/PageHeaderWrapper';
+
 const { Content } = Layout;
 
 const { Search } = Input
@@ -46,28 +48,34 @@ class Userdashboard extends Component {
 
   render() {
     return (
-      <Content
-      style={{
-        margin: '24px 16px 0',
-        padding: 24,
-        background: '#fff',
-        minHeight: '670px',
-      }}>
       <div>
-        <div>
-          <Row >
-            <Col span={4}>
-              <Search
-                onSearch={this.queryByPage}
-              />
-            </Col>
-          </Row>
-        </div>
-      <div>
-        <Users />
+  <PageHeaderWrapper >
+
+</PageHeaderWrapper>
+<Content
+style={{
+  margin: '24px 16px 0',
+  padding: 24,
+  background: '#fff',
+  minHeight: '670px',
+}}>
+<div>
+  <div>
+    <Row >
+      <Col span={4}>
+        <Search
+          onSearch={this.queryByPage}
+        />
+      </Col>
+    </Row>
+  </div>
+<div>
+  <Users />
+</div>
+</div>
+</Content>
       </div>
-    </div>
-      </Content>
+    
 
 
     );

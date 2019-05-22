@@ -6,5 +6,8 @@ module.exports = {
   fixedHeader: false, // sticky header
   autoHideHeader: false, // auto hide header
   fixSiderbar: false, // sticky siderbar
-  theme: 'light'
+  theme: 'light',
+  menu: {
+    disableLocal: false,
+  },
 };

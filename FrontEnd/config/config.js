@@ -48,8 +48,7 @@ export default {
       routes: [
         {
           path: '/',
-           redirect: '/welcome',
-           
+          redirect: '/welcome'
         },
         // dashboard
         {
