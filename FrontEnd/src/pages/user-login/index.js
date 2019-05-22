@@ -21,22 +21,7 @@ class LoginPage extends Component {
     this.setState({ type });
   };
 
-  onGetCaptcha = () =>
-    new Promise((resolve, reject) => {
-      this.loginForm.validateFields(['mobile'], {}, (err, values) => {
-        if (err) {
-          reject(err);
-        } else {
-          const { dispatch } = this.props;
-          dispatch({
-            type: 'userLogin/getCaptcha',
-            payload: values.mobile,
-          })
-            .then(resolve)
-            .catch(reject);
-        }
-      });
-    });
+
 
     login = ( values, callback) => {
       const { dispatch } = this.props;
@@ -77,13 +62,13 @@ class LoginPage extends Component {
             this.loginForm = form;
           }}
         >
-          <Tab key="account" tab={formatMessage({ id: 'login.tab-login-credentials' })}>
+          <Tab key="account" tab={formatMessage({ id: 'user-login.login.tab-login-credentials' })}>
             {status === 'error' &&
               !submitting &&
-              this.renderMessage(formatMessage({ id: 'login.message-invalid-credentials' }))}
+              this.renderMessage(formatMessage({ id: 'user-login.login.message-invalid-credentials' }))}
             <UserName
               name="email"
-              placeholder={`${formatMessage({ id: 'Email' })}: 请输入用户名`}
+              placeholder={`${formatMessage({ id: 'Email' })}: 请输入邮箱`}
               rules={[
                 {
                   required: true,

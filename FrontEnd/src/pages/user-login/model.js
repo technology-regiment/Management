@@ -8,8 +8,8 @@ import * as loginService from './service';
 export default {
   namespace: 'userLogin',
 
-  state: { 
-    loginUserInfo:{}
+  state: {
+    status: undefined,
   },
 
   effects: {
@@ -17,9 +17,12 @@ export default {
       const loginUserInfo = yield call(loginService.login, payload);
       const VerificationTokenInfo= yield call(loginService.verification, {AuthenticationToken: loginUserInfo.AuthenticationToken});
 debugger;
-      if (loginUserInfo.Name === VerificationTokenInfo.Name) {
+      yield put({
+        type: 'changeLoginStatus',
+        payload: loginUserInfo,
+      });
+      if (loginUserInfo.Id === VerificationTokenInfo.Id) {
         reloadAuthorized();
-        debugger;
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
         let { redirect } = params;
@@ -34,7 +37,7 @@ debugger;
             redirect = null;
           }
         }
-        yield put(routerRedux.replace(redirect || '/'));
+        yield put(routerRedux.replace(redirect || '/welcome'));
       }
           // if(loginUserInfo!==false){
           //   if(callback){
@@ -54,6 +57,13 @@ debugger;
   },
 
   reducers: {
-    
+    changeLoginStatus(state, { payload }) {
+      setAuthority(payload.SystemRoleName);
+      return {
+        ...state,
+        status: true,
+        
+      };
+    },
   },
 };

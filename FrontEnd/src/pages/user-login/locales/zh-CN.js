@@ -1,4 +1,9 @@
 export default {
+ 'Email':'账户',
+'Password':'密码',
+'validation.Email.required':'请输入邮箱！',
+'validation.Password.required':'请输入密码！',
+
   'user-login.login.userName': '用户名',
   'user-login.login.password': '密码',
   'user-login.login.message-invalid-credentials': '账户或密码错误（admin/ant.design）',
