@@ -65,6 +65,23 @@ namespace Background.Entities.SystemSetting
                 IsDeleted = false
             };
         }
+
+        public SystemRole Edit(string name, string description, Guid lastModifiedUserId, DateTime lastModifiedTime)
+        {
+            
+            Name = name;
+            Description = description;
+            LastModifiedUserId = lastModifiedUserId;
+            LastModifiedTime = lastModifiedTime;
+            return this;
+        }
+        public SystemRole LogicDelete(Guid lastModifiedUserId, DateTime lastModifiedTime)
+        {
+            IsDeleted = true;
+            LastModifiedUserId = lastModifiedUserId;
+            LastModifiedTime = lastModifiedTime;
+            return this;
+        }
     }
 
 

@@ -3,6 +3,7 @@ using Background.Logic.UICommands;
 using Background.Logic.ViewModel;
 using Background.Repository;
 using Background.Repository.UnitOfWork;
+using System;
 using System.Linq;
 
 namespace Background.Logic.Impl
@@ -50,7 +51,7 @@ namespace Background.Logic.Impl
             }
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _userRepository.Delete(id);
         }
@@ -69,7 +70,7 @@ namespace Background.Logic.Impl
             return new PagedCollection<UserDataGridViewModel>(pageAndSorting.PageNumber, totalRecordes, 10, users);
         }
 
-        public User GetById(int id)
+        public User GetById(Guid id)
         {
             return _userRepository.Get(id);
         }

@@ -1,7 +1,7 @@
 using Background.Entities;
 using Background.Logic.UICommands;
 using Background.Logic.ViewModel;
-
+using System;
 
 namespace Background.Logic
 {
@@ -10,9 +10,9 @@ namespace Background.Logic
 
         void Create(CreateUserUICommand command);
         void Update(UpdateUserUICommand command);
-        void Delete(int id);
+        void Delete(Guid id);
         PagedCollection<UserDataGridViewModel> GetAllByPageAndSorting(UserPageAndSortingUICommand pageAndSorting);
-        User GetById(int id);
+        User GetById(Guid id);
     }
         
 }

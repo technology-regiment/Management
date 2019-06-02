@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
 using Background.Entities;
 using Background.Logic;
 using Background.Logic.UICommands;
@@ -42,7 +43,7 @@ namespace Background.API.Controllers.API
 
         [Route("api/users/{id}")]
         [HttpDelete]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             _userLogic.Delete(id);
 
@@ -50,7 +51,7 @@ namespace Background.API.Controllers.API
 
         [Route("api/users/{id}")]
         [HttpGet]
-        public User GetById(int id)
+        public User GetById(Guid id)
         {
             return  _userLogic.GetById(id);
         }

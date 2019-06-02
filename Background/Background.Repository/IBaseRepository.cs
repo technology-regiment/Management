@@ -9,8 +9,8 @@ namespace Background.Repository
         TEntity Add(TEntity t);
 
         void Edit(TEntity t);
-        void Delete(int id);
-        TEntity Get(int id);
+        void Delete(Guid id);
+        TEntity Get(Guid id);
         IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> filter);
         IEnumerable<TEntity> GetPagingData(Expression<Func<TEntity, bool>> filter, int pageIndex, int pageSize,

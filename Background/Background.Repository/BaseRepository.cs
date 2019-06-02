@@ -34,13 +34,13 @@ namespace Background.Repository
             entry.State = EntityState.Modified;
             SafeSaveChanges();
         }
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             var entity = Get(id);
             DbContext.Set<TEntity>().Remove(entity);
             SafeSaveChanges();
         }
-        public TEntity Get(int id)
+        public TEntity Get(Guid id)
         {
             return DbContext.Set<TEntity>().Find(id);
         }

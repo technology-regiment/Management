@@ -1,6 +1,7 @@
 ﻿using Background.Logic;
 using Background.Logic.UICommands;
 using Background.Logic.ViewModel;
+using System;
 using System.Web.Http;
 
 namespace Background.API.Controllers.API
@@ -24,6 +25,26 @@ namespace Background.API.Controllers.API
             });
             
 
+        }
+
+        [Route("api/roles")]
+        [HttpPut]
+        public void Put(UpdateRoleUICommand command)
+        {
+            Execute(() =>
+            {
+                _systemRoleLogic.Update(command);
+            });
+        }
+
+        [Route("api/roles/{id}")]
+        [HttpDelete]
+        public void Delete(Guid id)
+        {
+            Execute(() =>
+            {
+                _systemRoleLogic.Delete(id);
+            });
         }
 
         [Route("api/roles/pagination")]

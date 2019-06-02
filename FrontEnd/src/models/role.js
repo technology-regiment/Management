@@ -36,22 +36,22 @@ export default {
 
     *create({ payload: values }, { call, put, select }) {
       yield call(rolesService.create, values);
-      const filter = yield select(state => state['user-dashboard'].filter);
-      const pagination = yield select(state => state['user-dashboard'].pagination);
+      const filter = yield select(state => state['role'].filter);
+      const pagination = yield select(state => state['role'].pagination);
       yield put({ type: 'fetch', payload: { filter, ...pagination } });
     },
 
     *patch({ payload: editValues }, { call, put, select }) {
       yield call(rolesService.edit, editValues);
-      const filter = yield select(state => state['user-dashboard'].filter);
-      const pagination = yield select(state => state['user-dashboard'].pagination);
+      const filter = yield select(state => state['role'].filter);
+      const pagination = yield select(state => state['role'].pagination);
       yield put({ type: 'fetch', payload: { filter, ...pagination } });
     },
 
     *remove({ payload: Id }, { call, put, select }) {
       yield call(rolesService.remove, Id);
-      const filter = yield select(state => state['user-dashboard'].filter);
-      const pagination = yield select(state => state['user-dashboard'].pagination);
+      const filter = yield select(state => state['role'].filter);
+      const pagination = yield select(state => state['role'].pagination);
       yield put({ type: 'fetch', payload: { filter, ...pagination } });
     },
   },
