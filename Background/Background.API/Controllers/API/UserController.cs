@@ -6,7 +6,7 @@ using Background.Logic.ViewModel;
 
 namespace Background.API.Controllers.API
 {
-    public class UserController : ApiController
+    public class UserController : BaseApiController
     {
         private readonly IUserLogic _userLogic;
 
@@ -22,8 +22,12 @@ namespace Background.API.Controllers.API
         [HttpPost]
         public void Post(CreateUserUICommand command)
         {
+            Execute(() =>
+            {
+                _userLogic.Create(command);
+            });
 
-            _userLogic.Create(command);
+            
 
         }
 

@@ -3,6 +3,7 @@ export default {
   'menu.home':'首页',
   'menu.systemSetting':'系统设置',
   'menu.systemSetting.systemUser':'系统用户',
+  'menu.systemSetting.systemRole':'系统角色',
   'menu.more-blocks': '更多区块',
 
   'menu.account.center': '个人中心',

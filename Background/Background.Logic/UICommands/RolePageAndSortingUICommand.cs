@@ -1,6 +1,6 @@
 ﻿namespace Background.Logic.UICommands
 {
-    public class UserPageAndSortingUICommand
+    public class RolePageAndSortingUICommand
     {
         public int PageNumber { get; set; }
         public string OrderProperty { get; set; }

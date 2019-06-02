@@ -42,6 +42,7 @@ export default {
         { path: '/user-login', name: 'login', component: './user-login/index' },
       ],
     },
+    
     {
       path: '/',
       component: '../layouts/BasicLayout',
@@ -60,13 +61,18 @@ export default {
         {
           name: 'systemSetting',
           icon: 'setting',
-          path: '/user-dashboard',
+          path: '/systemSettings',
           routes: [
             {
-              path: '/user-dashboard/index',
+              path: '/systemSettings/index',
               name: 'systemUser',
-              component: './user-dashboard/index',
+              component: './systemSettings/index',
             },
+            {
+              path: '/systemSettings/rolePage',
+              name: 'systemRole',
+              component: './systemSettings/rolePage',
+            }
           ],
         },
        

@@ -56,22 +56,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter\UserConverter.cs" />
+    <Compile Include="Impl\SystemRoleLogic.cs" />
     <Compile Include="Impl\SystemUserLogic.cs" />
     <Compile Include="Impl\UserLogic.cs" />
     <Compile Include="Installer\LogicInstaller.cs" />
+    <Compile Include="ISystemRoleLogic.cs" />
     <Compile Include="IUserLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ISystemUserLogic.cs" />
+    <Compile Include="UICommands\CreateRoleUICommand.cs" />
     <Compile Include="UICommands\CreateUserUICommand.cs" />
     <Compile Include="UICommands\FilterUserUICommand.cs" />
     <Compile Include="UICommands\LoginUICommand.cs" />
     <Compile Include="UICommands\LogoutUICommand.cs" />
+    <Compile Include="UICommands\RolePageAndSortingUICommand.cs" />
     <Compile Include="UICommands\UpdateUserUICommand.cs" />
     <Compile Include="UICommands\UserPageAndSortingUICommand.cs" />
     <Compile Include="UICommands\VerificationTokenUICommand.cs" />
+    <Compile Include="UICommands\UpdateRoleUICommand.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModel\AuthenticatedViewModel.cs" />
     <Compile Include="ViewModel\PagedCollection.cs" />
+    <Compile Include="ViewModel\RoleDataGridViewModel.cs" />
     <Compile Include="ViewModel\UserDataGridViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

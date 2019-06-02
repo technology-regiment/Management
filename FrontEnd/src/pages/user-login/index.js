@@ -12,6 +12,8 @@ const { Tab, UserName, Password, Mobile, Captcha, Submit } = Login;
   userLogin,
   submitting: loading.effects['userLogin/login'],
 }))
+
+
 class LoginPage extends Component {
   state = {
     type: 'account'
