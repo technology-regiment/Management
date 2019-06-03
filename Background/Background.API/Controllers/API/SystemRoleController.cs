@@ -1,4 +1,5 @@
-﻿using Background.Logic;
+﻿using Background.API.Filter;
+using Background.Logic;
 using Background.Logic.UICommands;
 using Background.Logic.ViewModel;
 using System;
@@ -6,6 +7,7 @@ using System.Web.Http;
 
 namespace Background.API.Controllers.API
 {
+    [TokenAuthorize]
     public class SystemRoleController: BaseApiController
     {
         private readonly ISystemRoleLogic _systemRoleLogic;
@@ -51,7 +53,9 @@ namespace Background.API.Controllers.API
         [HttpPost]
         public PagedCollection<RoleDataGridViewModel> Pagination(RolePageAndSortingUICommand pageAndSorting)
         {
-            return _systemRoleLogic.GetAllByPageAndSorting(pageAndSorting);
+            return Execute(() => _systemRoleLogic.GetAllByPageAndSorting(pageAndSorting));
+           
+            
         }
     }
 }

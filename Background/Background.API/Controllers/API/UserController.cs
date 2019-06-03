@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Http;
+using Background.API.Filter;
 using Background.Entities;
 using Background.Logic;
 using Background.Logic.UICommands;
@@ -7,6 +8,7 @@ using Background.Logic.ViewModel;
 
 namespace Background.API.Controllers.API
 {
+    [TokenAuthorize]
     public class UserController : BaseApiController
     {
         private readonly IUserLogic _userLogic;
