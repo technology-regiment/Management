@@ -18,6 +18,13 @@ export function getAuthority(str) {
 }
 
 export function setAuthority(authority) {
-  const proAuthority = typeof authority === 'string' ? [authority] : authority;
-  return localStorage.setItem('antd-pro-authority', JSON.stringify(proAuthority));
+  var storage = window.localStorage;
+  storage["Name"] = authority.Name;
+  storage["SystemRoleName"] = authority.SystemRoleName;
+  storage["Email"] = authority.Email;
+  storage["AuthenticationToken"] = authority.AuthenticationToken;
+  storage['Id'] = authority.Id;
+  return storage;
+  // const proAuthority = typeof authority === 'string' ? [authority] : authority;
+  // return localStorage.setItem('antd-pro-authority', proAuthority);
 }

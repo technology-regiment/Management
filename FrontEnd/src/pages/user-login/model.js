@@ -58,7 +58,7 @@ debugger;
 
   reducers: {
     changeLoginStatus(state, { payload }) {
-      setAuthority(payload.SystemRoleName);
+      setAuthority(payload);
       return {
         ...state,
         status: true,
