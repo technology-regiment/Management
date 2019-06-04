@@ -33,7 +33,7 @@ namespace Background.Logic.Impl
             {
                 throw new DomainException(ErrorMessage.RoleNameIsExist);
             }
-            var systemRole = SystemRole.Create(command.Name, command.Description, new Guid(), _timeSource.LocalNow());
+            var systemRole = SystemRole.Create(command.Name, command.Description, LoginUserSection.CurrentUser.UserId, _timeSource.LocalNow());
             using (var unitOfWork = _unitOfWorkFactory.GetCurrentUnitOfWork())
             {
                 _systemRoleRepository.Add(systemRole);

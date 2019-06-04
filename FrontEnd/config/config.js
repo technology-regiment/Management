@@ -38,7 +38,7 @@ export default {
       path: '/user-login',
       component: '../layouts/UserLayout',
       routes: [
-         {path:'/' ,redirect:'/user-login',authority: null},
+        //  {path:'/' ,redirect:'/user-login'},
         { path: '/user-login', name: 'login', component: './user-login/index' },
       ],
     },
