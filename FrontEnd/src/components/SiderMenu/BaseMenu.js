@@ -6,6 +6,8 @@ import { urlToList } from '../_utils/pathTools';
 import { getMenuMatches } from './SiderMenuUtils';
 import { isUrl } from '@/utils/utils';
 import styles from './index.less';
+import router from 'umi/router'
+import { Router } from 'dva/router';
 
 const { SubMenu } = Menu;
 
@@ -103,7 +105,10 @@ export default class BaseMenu extends PureComponent {
             ? () => {
                 onCollapse(true);
               }
-            : undefined
+            : ()=>{
+             
+              window.load(itemPath);
+            }
         }
       >
         {icon}

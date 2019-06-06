@@ -72,8 +72,7 @@ class Roles extends Component {
   }
   render() {
     const { Search } = Input
-    const { role, loading } = this.props;
-    const { data } = role;
+    const { role:{data}, loading } = this.props;
     const columns = [
       {
         title: '角色名称',
@@ -122,15 +121,15 @@ class Roles extends Component {
           <Table
             loading={loading}
             columns={columns}
-            dataSource={data.Results}
+            dataSource={data==null||data==undefined?null:data.Results}
             rowKey="Id"
             pagination={false}
           />
           <Pagination
             className="ant-table-pagination"
-            total={data.Pagination.Total}
-            current={data.Pagination.Current}
-            pageSize={data.Pagination.PageSize}
+            total={data==null||data==undefined?null: data.Pagination.Total}
+            current={data==null||data==undefined?1:data.Pagination.Current}
+            pageSize={data==null||data==undefined?10:data.Pagination.PageSize}
             onChange={this.pageChangeHandler}
           />
         </div>

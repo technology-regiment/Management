@@ -16,7 +16,6 @@ export default {
     *login({ payload }, { put,call }) {
       const loginUserInfo = yield call(loginService.login, payload);
       const VerificationTokenInfo= yield call(loginService.verification, {AuthenticationToken: loginUserInfo.AuthenticationToken});
-debugger;
       yield put({
         type: 'changeLoginStatus',
         payload: loginUserInfo,

@@ -4,7 +4,7 @@
  */
 import { extend } from 'umi-request';
 import { notification } from 'antd';
-
+import router from 'umi/router'
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
   201: '新建或修改数据成功。',
@@ -30,7 +30,9 @@ const errorHandler = error => {
   const { response = {} } = error;
   const errortext = codeMessage[response.status] || response.statusText;
   const { status, url } = response;
-
+  if (status == 401) {
+    router.push("/user-login");
+  }
   notification.error({
     message: `请求错误 ${status}: ${url}`,
     description: errortext,
@@ -41,10 +43,11 @@ const errorHandler = error => {
  * 配置request请求时的默认参数
  */
 const request = extend({
+  headers: { 'X-AuthenticationToken': window.localStorage.getItem("AuthenticationToken") },
   errorHandler, // 默认错误处理
   credentials: 'include', // 默认请求是否带上cookie
-  headers: { 'X-AuthenticationToken': window.localStorage.getItem("AuthenticationToken") }
-  
+ 
+
 });
 
 export default request;
