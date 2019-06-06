@@ -105,10 +105,7 @@ export default class BaseMenu extends PureComponent {
             ? () => {
                 onCollapse(true);
               }
-            : ()=>{
-             
-              window.load(itemPath);
-            }
+            : undefined
         }
       >
         {icon}

@@ -37,21 +37,8 @@ export default {
           }
         }
         yield put(routerRedux.replace(redirect || '/welcome'));
+        window.location.reload();
       }
-          // if(loginUserInfo!==false){
-          //   if(callback){
-          //     var storage = window.localStorage;
-          //     storage["Name"] = loginUserInfo.Name;
-          //     storage["SystemRoleName"] = loginUserInfo.SystemRoleName;
-          //     storage["Email"] = loginUserInfo.Email;
-          //     storage["AuthenticationToken"] = loginUserInfo.AuthenticationToken;
-          //     storage['Id'] = loginUserInfo.Id;
-          //     const VerificationTokenInfo= yield call(loginService.verification, {
-          //       AuthenticationToken: loginUserInfo.AuthenticationToken
-          //   });
-          //   callback();
-          //   }
-          // } 
         }, 
   },
 
