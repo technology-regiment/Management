@@ -9,27 +9,22 @@ namespace Background.API.Installer
 {
     public static class WindsorBootstrapper
     {
-            private static IWindsorContainer _container;
+        private static IWindsorContainer _container;
 
-            public static void Initialize()
-            {
-                _container = new WindsorContainer();
-                _container.Install(FromAssembly.This(),
-                    FromAssembly.Containing<LogicInstaller>(),
-                    FromAssembly.Containing<RepositoryInstaller>(),
-                    FromAssembly.Containing<CommonInstaller>());
+        public static void Initialize()
+        {
+            _container = new WindsorContainer();
+            _container.Install(FromAssembly.This(),
+                FromAssembly.Containing<LogicInstaller>(),
+                FromAssembly.Containing<RepositoryInstaller>(),
+                FromAssembly.Containing<CommonInstaller>());
 
-                _container.Register(Component.For<IWindsorContainer>().Instance(_container).LifestyleSingleton());
+            _container.Register(Component.For<IWindsorContainer>().Instance(_container).LifestyleSingleton());
+        }
 
-            }
-
-            public static IWindsorContainer Container
-            {
-                get
-                {
-                    return _container;
-                }
-            }
-        
+        public static IWindsorContainer Container
+        {
+            get { return _container; }
+        }
     }
 }

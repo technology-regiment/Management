@@ -6,7 +6,7 @@ using System.Web.Http;
 
 namespace Background.API.Controllers.API
 {
-    public class SystemRoleController: BaseApiController
+    public class SystemRoleController : BaseApiController
     {
         private readonly ISystemRoleLogic _systemRoleLogic;
 
@@ -19,32 +19,21 @@ namespace Background.API.Controllers.API
         [HttpPost]
         public void Post(CreateRoleUICommand command)
         {
-            Execute(() =>
-            {
-                _systemRoleLogic.Create(command);
-            });
-            
-
+            _systemRoleLogic.Create(command);
         }
 
         [Route("api/roles")]
         [HttpPut]
         public void Put(UpdateRoleUICommand command)
         {
-            Execute(() =>
-            {
-                _systemRoleLogic.Update(command);
-            });
+            _systemRoleLogic.Update(command);
         }
 
         [Route("api/roles/{id}")]
         [HttpDelete]
         public void Delete(Guid id)
         {
-            Execute(() =>
-            {
-                _systemRoleLogic.Delete(id);
-            });
+            _systemRoleLogic.Delete(id);
         }
 
         [Route("api/roles/pagination")]

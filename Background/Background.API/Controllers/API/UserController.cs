@@ -18,20 +18,12 @@ namespace Background.API.Controllers.API
         }
 
 
-
         [Route("api/users")]
         [HttpPost]
         public void Post(CreateUserUICommand command)
         {
-            Execute(() =>
-            {
-                _userLogic.Create(command);
-            });
-
-            
-
+            _userLogic.Create(command);
         }
-
 
 
         [Route("api/users")]
@@ -46,14 +38,13 @@ namespace Background.API.Controllers.API
         public void Delete(Guid id)
         {
             _userLogic.Delete(id);
-
         }
 
         [Route("api/users/{id}")]
         [HttpGet]
         public User GetById(Guid id)
         {
-            return  _userLogic.GetById(id);
+            return _userLogic.GetById(id);
         }
 
         [Route("api/users/pagination")]
@@ -62,7 +53,5 @@ namespace Background.API.Controllers.API
         {
             return _userLogic.GetAllByPageAndSorting(pageAndSorting);
         }
-
-       
     }
 }

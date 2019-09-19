@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using Background.API.Filter;
 
 namespace Background.API
 {
@@ -19,6 +17,7 @@ namespace Background.API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            config.Filters.Add(new GlobalExceptionAttribute());
         }
     }
 }
